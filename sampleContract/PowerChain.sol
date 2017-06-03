@@ -11,7 +11,6 @@
 
 */
 
-
 contract PowerDelivery
 {
 	// Parties
@@ -152,7 +151,6 @@ contract PowerDelivery
 }
 
 contract Meter {
-
 	Metering public metering;
 	address public owner;
 	bool public feed_in;
