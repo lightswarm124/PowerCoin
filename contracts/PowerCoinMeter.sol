@@ -58,11 +58,13 @@ contract PowerCoinPowMeter is SafeMath {
         last_reading_nonce = _initial_nonce;
         last_reading_time = now;
         powerSupply = 0;
+        sell_price = 0
     }
 
     function buyConsumedPower(uint256 _timeDuration, uint256 _powerConsumed) {
         if(_powerConsumed > powerSupply
-            || powerConsumers[msg.sender].timeDuration >= now) throw;
+            || powerConsumers[msg.sender].timeDuration > now
+            || sell_price <= 0 ) throw;
 
         pay_amount = safeMul(_powerConsumed, sell_price);
 
