@@ -342,8 +342,6 @@ contract Metering {
 			owner.send(msg.value);
 		}
 	}
-
-
 }
 
 contract Termination {
