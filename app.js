@@ -28,7 +28,7 @@ io.on('connection', function(socket){
 			kwh : Math.floor((Math.random() * 10) + 1),
 			timestamp : new Date()/1
 		});
-    }, 4000);
+    }, 6500);
   socket.on('disconnect', function () {
     console.log('A user disconnected');
   });
