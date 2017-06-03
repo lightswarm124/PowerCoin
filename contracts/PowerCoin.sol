@@ -63,20 +63,21 @@ contract Termination {
 		owner=msg.sender;
 	}
 
-	function addPeer(Termination _peer) {
+	function addPeer(address _peer) {
 		if(msg.sender!=owner) throw;
 		peers.push(_peer);
 	}
 
-	function removePeer(Termination _peer) {
+	function removePeer(address _peer) {
 		if(msg.sender!=owner) throw;
-		for(uint i=0;i<peers.length;i++) {
+		for(uint i = 0 ; i < peers.length ; i++) {
 			if(peers[i]==_peer) {
 				delete peers[i];
 			}
 		}
 	}
 
+/*
 	function addMetering(address a) {
 		if(msg.sender!=owner) throw;
 		meterings[a]=1;
@@ -87,7 +88,6 @@ contract Termination {
 		meterings[a]=2;
 	}
 
-/*
 	function addNode(Node _node) {
 		if(msg.sender!=owner) throw;
 		if(meterings[_node.metering()]!=1) throw;
