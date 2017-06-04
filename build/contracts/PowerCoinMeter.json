@@ -1,0 +1,180 @@
+{
+  "contract_name": "PowerCoinMeter",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_timeDuration",
+          "type": "uint256"
+        },
+        {
+          "name": "_powerConsumed",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyConsumedPower",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_nonce",
+          "type": "uint256"
+        },
+        {
+          "name": "_time",
+          "type": "uint256"
+        },
+        {
+          "name": "_add_production",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateReading",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pay_amount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "last_reading_nonce",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "last_reading_time",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "powerSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "sell_price",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "changePowerPrice",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "meterOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get_powerSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newMeterOwner",
+          "type": "address"
+        }
+      ],
+      "name": "changeMeterOwner",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "payable": false,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000c57fe5b5b60008054600160a060020a03191633600160a060020a031617815560028190554260035560048190556005555b5b61045c8061004a6000396000f300606060405236156100925763ffffffff60e060020a60003504166266ed0781146100a85780630130b97e146100c05780632453fca3146100db57806327ff9638146100fd57806337eb20011461011f5780633861447f146101415780635fb9987214610163578063a836e45414610185578063b445db681461019a578063bdc9319c146101c6578063d223ec2f146101e8575b341561009a57fe5b6100a65b60006000fd5b565b005b34156100b057fe5b6100a6600435602435610206565b005b34156100c857fe5b6100a66004356024356044356102d1565b005b34156100e357fe5b6100eb61031b565b60408051918252519081900360200190f35b341561010557fe5b6100eb610321565b60408051918252519081900360200190f35b341561012757fe5b6100eb610327565b60408051918252519081900360200190f35b341561014957fe5b6100eb61032d565b60408051918252519081900360200190f35b341561016b57fe5b6100eb610333565b60408051918252519081900360200190f35b341561018d57fe5b6100a6600435610339565b005b34156101a257fe5b6101aa61035e565b60408051600160a060020a039092168252519081900360200190f35b34156101ce57fe5b6100eb61036d565b60408051918252519081900360200190f35b34156101f057fe5b6100a6600160a060020a0360043516610374565b005b6004548111806102325750600160a060020a033316600090815260016020819052604090912001544290115b806102405750600060055411155b1561024b5760006000fd5b610257816005546103af565b600681905560008054604051600160a060020a039091169280156108fc0292909190818181858888f193505050501561009e5761029442836103de565b600160a060020a033316600090815260016020819052604090912001556004546102be9082610406565b6004556102cc565b60006000fd5b5b5050565b60005433600160a060020a0390811691161415806102f157506002548311155b156102fc5760006000fd5b610308600454826103de565b600455600283905560038290555b505050565b60065481565b60025481565b60035481565b60045481565b60055481565b60005433600160a060020a039081169116146103555760006000fd5b60058190555b50565b600054600160a060020a031681565b6004545b90565b60005433600160a060020a039081169116146103905760006000fd5b60008054600160a060020a031916600160a060020a0383161790555b50565b60008282026103d38415806103ce57508385838115156103cb57fe5b04145b61041f565b8091505b5092915050565b60008282016103d38482108015906103ce5750838210155b61041f565b8091505b5092915050565b60006104148383111561041f565b508082035b92915050565b80151561035b5760006000fd5b5b505600a165627a7a72305820ee4358af1f40a635c1467b77f9558b8364f0157aeff903cc32b2a4f302e51f330029",
+  "networks": {
+    "1496537295815": {
+      "events": {},
+      "links": {},
+      "address": "0x1d741b8680e357baaecb349ea393045828c2a9a6",
+      "updated_at": 1496541496246
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1496541496246
+}

@@ -31,7 +31,7 @@ contract SafeMath {
     }
 }
 
-contract PowerCoinPowMeter is SafeMath {
+contract PowerCoinMeter is SafeMath {
     address public meterOwner;
     mapping(address => Consumers) powerConsumers;
 
@@ -53,12 +53,12 @@ contract PowerCoinPowMeter is SafeMath {
     }
 
     // @Dev     Constructor function to set up meter
-    function Meter(uint256 _initial_nonce) {
+    function PowerCoinMeter() {
         meterOwner = msg.sender;
-        last_reading_nonce = _initial_nonce;
+        last_reading_nonce = 0;
         last_reading_time = now;
         powerSupply = 0;
-        sell_price = 0
+        sell_price = 0;
     }
 
     function buyConsumedPower(uint256 _timeDuration, uint256 _powerConsumed) {
