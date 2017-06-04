@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>PowerCoin Dashboard</title>
+<title>PowerCoin Dashboar</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -9,6 +9,11 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+<script src="js/CircularBuffer.js"></script>
+<script src="js/bower_components/moment/moment.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+<script src="js/market.js"></script>
 <body class="w3-light-grey">
 
 <!-- Top container -->
@@ -63,37 +68,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <div class="w3-container">
       <h5>Supply Market</h5>
-      <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button</td>
-        </tr>
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button</td>
-        </tr>
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button</td>
-        </tr>
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button></td>
-        </tr>
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button></td>
-        </tr>
-        <tr>
-          <td>V: 10 W: 20 A: 1 K:3</td>
-          <td>$10</td>
-          <td><button class="w3-button w3-dark-grey">BUY  <i class="fa fa-arrow-right"></i></button></td>
-        </tr>
+      <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white" id="market_data">
       </table><br>
 
     </div>
