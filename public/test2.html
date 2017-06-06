@@ -1,0 +1,45 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Day', 'Kilowatt Hours'],
+          ["Sunday", 30],
+          ["Monday", 31],
+          ["Tuesday", 27],
+          ["Wednesday", 28],
+          ['Thursday', 25],
+          ['Friday', 33],
+          ['Saturday', 26],
+        ]);
+
+        var options = {
+          title: 'Daily Average kWh',
+          width: 700,
+          height:300,
+          legend: { position: 'none' },
+          chart: { title: 'Daily Average Power Supply',
+                   subtitle: 'Average Daily kWh Production' },
+          bars: 'vertical', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Day of the Week'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "80%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 100; height: 300px; align: center;"></div>
+  </body>
+</html>
