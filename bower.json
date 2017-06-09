@@ -1,0 +1,20 @@
+{
+  "name": "powercoin",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Subramanian Venkatesan <subramanian.bsv@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lightswarm124/PowerCoin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.18.1"
+  }
+}
