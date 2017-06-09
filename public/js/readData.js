@@ -1,11 +1,5 @@
 console.log('Included');
 var socket = io();
-<<<<<<< HEAD
-socket.on('meter_data', processMeterData);
-
-function processMeterData(data) {
-	console.log(data);
-=======
 var _latestReadings = new CircularBuffer(7);
 socket.on('meter_data', processMeterData);
 
@@ -16,7 +10,6 @@ function processMeterData(data) {
 }
 
 function updateReadings(data) {
->>>>>>> ui
 	var volts = data.volt;
 	var watts = data.watt;
 	var amps = data.amps;
@@ -25,11 +18,6 @@ function updateReadings(data) {
 	document.getElementById("watt_reading").innerHTML = watts;
 	document.getElementById("amps_reading").innerHTML = amps;
 	document.getElementById("kwh_reading").innerHTML = kwh;
-<<<<<<< HEAD
-	console.log("displaying");
-
-}
-=======
 }
 
 function updateLatestReadingsTable(data) {
@@ -85,4 +73,3 @@ function updateLatestReadingsTable(data) {
   <td><i>39 mins</i></td>
 </tr>
 */
->>>>>>> ui
