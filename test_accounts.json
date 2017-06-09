@@ -1,0 +1,34 @@
+{
+	"admin" : {
+		"seed" : "pig whisper hundred auto plastic recycle multiply virtual live code manual roast",
+		"password" : "mypass",
+		"salt" : "swag",
+		"address" : "0x84f1bacbb9b2cb1146e3569ea89bf067a932768d",
+		"email" : "bank@abc.xyz",
+		"name" : "Bank of Eth"
+	},
+	"alice" : {
+		"seed" : "again team major dwarf drama brother obey bunker flip still nephew century",
+		"password" : "mypass",
+		"salt" : "swag",
+		"address" : "0xd34d82eeece473c54fd5225bab6c73a7b2898f73",
+		"email" : "alice@abc.xyz",
+		"name" : "alice"
+	},
+	"bob" : {
+		"seed" : "eight comfort maximum plate goddess rhythm liquid small fiber arctic coin stool",
+		"password" : "mypass",
+		"salt" : "swag",
+		"address" : "0x7067edd0b4d8b1bb4bcdd15d50c94b56d2c349ab",
+		"email" : "bob@abc.xyz",
+		"name" : "bob"
+	},
+	"DMV" : {
+		"seed" : "amused paddle fruit tumble change client surround peasant echo verb puppy any",
+		"password" : "mypass",
+		"salt" : "swag",
+		"address" : "0x0ab89a27b937a0a1797057ca415bcec6edf323e5",
+		"email" : "dmv@abc.xyz",
+		"name" : "Dept of Motorized Vehicle"
+	}
+}

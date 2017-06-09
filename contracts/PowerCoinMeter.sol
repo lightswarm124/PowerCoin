@@ -1,4 +1,4 @@
-pragma solidity ^0.4.8;
+pragma solidity ^0.4.4;
 
 contract SafeMath {
 
@@ -31,9 +31,11 @@ contract SafeMath {
     }
 }
 
-contract PowerCoinPowMeter is SafeMath {
+contract PowerCoinMeter is SafeMath {
     address public meterOwner;
     mapping(address => Consumers) powerConsumers;
+
+    event priceChanged(uint newPrice);
 
     // @Dev     Info on data interval
     // @Dev     *NOTE* Not sure if needed
@@ -53,15 +55,15 @@ contract PowerCoinPowMeter is SafeMath {
     }
 
     // @Dev     Constructor function to set up meter
-    function Meter(uint256 _initial_nonce) {
+    function PowerCoinMeter() {
         meterOwner = msg.sender;
-        last_reading_nonce = _initial_nonce;
+        last_reading_nonce = 0;
         last_reading_time = now;
         powerSupply = 0;
-        sell_price = 0
+        sell_price = 0;
     }
 
-    function buyConsumedPower(uint256 _timeDuration, uint256 _powerConsumed) {
+    function buyConsumedPower (uint256 _timeDuration, uint256 _powerConsumed) payable {
         if(_powerConsumed > powerSupply
             || powerConsumers[msg.sender].timeDuration > now
             || sell_price <= 0 ) throw;
@@ -69,7 +71,7 @@ contract PowerCoinPowMeter is SafeMath {
         pay_amount = safeMul(_powerConsumed, sell_price);
 
         // @Dev     Attempt to pay powerProducer
-        if(meterOwner.send(pay_amount)) {
+        if(meterOwner.send(msg.value)) {
             powerConsumers[msg.sender].timeDuration = safeAdd(now, _timeDuration);
             powerSupply = safeSub(powerSupply, _powerConsumed);
         } else {
@@ -82,6 +84,7 @@ contract PowerCoinPowMeter is SafeMath {
     function changePowerPrice(uint256 _price) {
         if(msg.sender != meterOwner) throw;
         sell_price = _price;
+        priceChanged(_price);
     }
 
     // @Dev     Update power supply from data feed
@@ -89,8 +92,8 @@ contract PowerCoinPowMeter is SafeMath {
     // @Param2  Update time (either block time or real time)
     // @Param3  New electricity production in time interval
     function updateReading(uint256 _nonce, uint256 _time, uint256 _add_production) {
-        if(msg.sender != meterOwner
-            || _nonce <= last_reading_nonce) throw;
+        /*if(msg.sender != meterOwner
+            || _nonce <= last_reading_nonce) throw;*/
 
         powerSupply = safeAdd(powerSupply, _add_production);
         last_reading_nonce = _nonce;

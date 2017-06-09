@@ -7,13 +7,24 @@
     "test": "test"
   },
   "dependencies": {
+    "async": "^2.4.1",
     "chart.js": "^2.6.0",
+    "eth-lightwallet": "^2.5.4",
+    "eth-query": "^2.1.1",
     "express": "^4.15.3",
-    "socket.io": "^2.0.2"
+    "hooked-web3-provider": "^1.0.0",
+    "socket.io": "^2.0.2",
+    "socket.io-client": "^2.0.2",
+    "underscore": "^1.8.3",
+    "web3": "^0.19.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "watchify": "^3.9.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "market": "watchify public/js/market.js -o public/dist/market.bundle.js",
+    "wallet" : "watchify public/js/wallet.js -o public/dist/wallet.bundle.js"
   },
   "repository": {
     "type": "git",

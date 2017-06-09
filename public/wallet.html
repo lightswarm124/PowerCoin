@@ -59,7 +59,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-panel">
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
-        <i class="fa fa-qrcode fa-fw" style="height:5px"></i>Ether Address<input size="100"type="text" name="ethaddress" width="100%"> <button class="w3-button w3-dark-grey">Register Address </button><br>
+        <i class="fa fa-qrcode fa-fw" style="height:5px"></i>Ether Address<input size="100"type="text" name="ethaddress" id="ethAddress" width="100%"> <button onclick="getAddressInfo()"class="w3-button w3-dark-grey">Get Address Info</button><br>
       </div>
       <div class="w3-half">
       </div>
@@ -67,6 +67,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-container">
     <h5>Address Information</h5>
+    <div id="addressInfo"></div>
   </div>
   <hr>
   <div class="w3-container">
@@ -105,5 +106,7 @@ function w3_close() {
 }
 </script>
 
+
+<script src = "dist/wallet.bundle.js"></script>
 </body>
 </html>
