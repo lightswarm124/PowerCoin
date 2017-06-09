@@ -136,4 +136,4 @@ contract PowerTokenFactory {
 		return (activeTokens,cnt);
 	}
 
-}	
+}

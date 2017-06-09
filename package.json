@@ -1,15 +1,26 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "powercoin",
+  "version": "0.0.1",
+  "description": "PowerCoin",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "web3": "^0.18.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightswarm124/PowerCoin.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.15.3",
-    "socket.io": "^2.0.2"
-  }
+  "bugs": {
+    "url": "https://github.com/lightswarm124/PowerCoin/issues"
+  },
+  "homepage": "https://github.com/lightswarm124/PowerCoin#readme"
 }
