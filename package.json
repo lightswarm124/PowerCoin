@@ -15,6 +15,7 @@
     "hooked-web3-provider": "^1.0.0",
     "socket.io": "^2.0.2",
     "socket.io-client": "^2.0.2",
+    "truffle": "^3.2.5",
     "underscore": "^1.8.3",
     "web3": "^0.19.0"
   },
@@ -24,7 +25,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "market": "watchify public/js/market.js -o public/dist/market.bundle.js",
-    "wallet" : "watchify public/js/wallet.js -o public/dist/wallet.bundle.js"
+    "wallet": "watchify public/js/wallet.js -o public/dist/wallet.bundle.js",
+    "migrate": "truffle migrate --all"
   },
   "repository": {
     "type": "git",
