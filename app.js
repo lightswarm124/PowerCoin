@@ -57,7 +57,7 @@ io.on('connection', function(socket){
       var current = _.now();
       var power = generatePower();
       console.log('Generating new power', power.kwh);
-      pcm.updateReading(nonce++, _.now(), power.kwh, { from : '0x84f1bacbb9b2cb1146e3569ea89bf067a932768d'}).then(function(tx) {
+      pcm.updateReading(nonce++, _.now(), power.kwh, { from : web3.eth.accounts[0]}).then(function(tx) {
         socket.emit('meter_data', {
             volt : power.volt,
             watt : power.watt,
