@@ -8,12 +8,12 @@ console.log('Included');
 var pcm = PowerCoinMeter.deployed();
 console.log(pcm.address);
 
-var currentPrice = 0;
+var currentPrice = 20;
 
 pcm.sell_price().then(onReady)
 
 function onReady(price) {
-	currentPrice = price.toString();
+	currentPrice = 20;
 	socket.on('meter_data', updateMarketData);
 }
 
@@ -39,7 +39,7 @@ function updateMarketData(data) {
 		var timestamp = a.timestamp.toString();
 		var timestampMoment = moment(timestamp, 'x')
 		var current = moment();
-		a.price = currentPrice;
+		a.price = '$' + currentPrice;
 		a.timestamp_text = current.diff(timestampMoment, 'seconds') + ' seconds ago';
 		return a;
 	})
@@ -50,13 +50,18 @@ function updateMarketData(data) {
 
 
 function buyConsumedPower(powerConsumed) {
-	var duration = prompt("You are buying " + powerConsumed + "KWH @" + currentPrice + '.' + 'Please enter time duration');
+	var duration = prompt("You are buying " + powerConsumed + "KWH @ $" + currentPrice + '.' + 'Please enter time duration');
 	var timeDuration = parseInt(duration);
 	// var timeDuration = 1;
 	pcm.buyConsumedPower(powerConsumed, timeDuration, {
 		from : web3.eth.accounts[1],
 		value : powerConsumed * currentPrice
-	}).then(console.log);
+	}).then(function(tx) {
+		var msg = powerConsumed + ' KWH @ $' + currentPrice + ' for' + timeDuration + ' was bought. Here is the transaction hash ' + tx;
+		alert(msg);
+		console.log(tx);
+
+	});
 }
 
 window.buyConsumedPower = buyConsumedPower;
