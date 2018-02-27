@@ -21,7 +21,7 @@ PCM.setProvider(web3.currentProvider);
 var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendfile('index.html');
+  res.sendFile('public/index.html' , { root : __dirname});
 });
 
 app.use(express.static('public'));
